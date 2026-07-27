@@ -25,9 +25,9 @@ code = code_Prompt | model | parser
 
 
 
-parallel = RunnableParallel({
-    "passthrough" : RunnablePassthrough(), 
-    "explanation" : explain_Prompt | model | parser
+parallel = RunnableParallel({                           # RunnableParallel
+    "passthrough" : RunnablePassthrough(),              # RunnablePassthrough
+    "explanation" : explain_Prompt | model | parser     # RunnableSequence (Prompt → Model → Parser)
 }
 )
 
